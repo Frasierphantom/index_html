@@ -13,7 +13,6 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
 
-	
 </head>
 <body>
 
@@ -38,6 +37,17 @@
 	
 	var college = L.marker([51.129852, -27334955]).addTo(mymap);
 	college.bindpopup("<b>c Block</b><br>strode college").openpopup();
+	
+	var mymap = new L.Map('map', {
+    fullscreenControl: true,
+    // OR
+    fullscreenControl: {
+        pseudoFullscreen: false // if true, fullscreen to page width and height
+    }
+});
+
+// or, add to an existing map:
+mymap.addControl(new L.Control.Fullscreen());
 
 	//var college1 = L.marker ([51.129952, -27334955]).addTo(mymap);
 	
